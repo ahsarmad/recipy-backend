@@ -64,10 +64,10 @@ router.post("/login", async (req, res) => {
         isAdmin: user.isAdmin,
       },
       secret,
-      { expiresIn: "1d" } // can change to 1w, 1m.. etc
+      { expiresIn: "1w" } // can change to 1w, 1m.. etc
     );
 
-    res.status(200).send({ user: user.email, token: token });
+    res.status(200).send({ user: user.email, token: token, name: user.name });
   } else {
     res.status(400).send("Wrong Password");
   }
