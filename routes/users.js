@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 //
 //! get list of users
-
+//
 router.get("/", async (req, res) => {
   const userList = await User.find().select("-passwordHash");
   /* If you'd like to only get certain fields, you can simply pass them 
