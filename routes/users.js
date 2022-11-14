@@ -71,7 +71,7 @@ router.post("/login", async (req, res) => {
       user: user.email,
       token: token,
       name: user.name,
-      username: user.userName,
+      username: user.username,
     });
   } else {
     res.status(400).send("Wrong Password");
