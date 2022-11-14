@@ -66,7 +66,7 @@ router.post("/login", async (req, res) => {
       secret,
       { expiresIn: "1w" } // can change to 1w, 1m.. etc
     );
-
+    //
     res.status(200).send({
       user: user.email,
       token: token,
