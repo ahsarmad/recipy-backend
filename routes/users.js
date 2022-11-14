@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
   const userList = await User.find().select("-passwordHash");
   /* If you'd like to only get certain fields, you can simply pass them 
      as parameters to the select function
-     ? User.find().select("name userName email"); 
+     ? User.find().select("name username email"); 
      this returns just the name, phone, and email of users 
   */
 
@@ -86,7 +86,7 @@ router.post("/register", async (req, res) => {
     name: req.body.name,
     email: req.body.email,
     isAdmin: req.body.isAdmin,
-    userName: req.body.userName,
+    username: req.body.username,
     passwordHash: await bcrypt.hashSync(req.body.password, salt),
   });
 
